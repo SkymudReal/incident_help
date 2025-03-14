@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Incident Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Левая панель -->
+    <div class="left-panel">
+      <h2>Создать таблицу</h2>
+      <form id="incident-form">
+        <div class="form-group">
+          <label for="incident-name">Название инцидента</label>
+          <input type="text" id="incident-name" required>
+        </div>
+        <div class="form-group">
+          <label for="criticality">Критичность инцидента</label>
+          <select id="criticality">
+            <option value="Низкая">Низкая</option>
+            <option value="Средняя">Средняя</option>
+            <option value="Высокая">Высокая</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="category">Категория инцидента</label>
+          <select id="category">
+            <option value="Уведомление о компьютерном инциденте">Уведомление о компьютерном инциденте</option>
+            <option value="Уведомление о компьютерной атаке">Уведомление о компьютерной атаке</option>
+            <option value="Уведомление о наличии уязвимости">Уведомление о наличии уязвимости</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="type">Тип инцидента</label>
+          <select id="type">
+            <option value="Несанкционированное изменение информации">Несанкционированное изменение информации</option>
+            <option value="Сетевое сканирование">Сетевое сканирование</option>
+            <option value="Попытки эксплуатации уязвимости">Попытки эксплуатации уязвимости</option>
+            <option value="Компрометация учетной записи">Компрометация учетной записи</option>
+            <option value="Замедление работы ресурса в результате DDoS-атаки">Замедление работы ресурса в результате DDoS-атаки</option>
+            <option value="Подозрительные изменения конфигурации">Подозрительные изменения конфигурации</option>
+            <option value="Сетевое сканирование">Сетевое сканирование</option>
+            <option value="Неудачные попытки авторизации">Неудачные попытки авторизации</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="datetime">Дата и время инцидента</label>
+          <input type="text" id="data-alert" required>
+        </div>
+        <div class="form-group">
+          <label for="description">Подробное описание</label>
+          <textarea id="description" rows="2" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="source-info">Информация об источнике активности</label>
+          <input type="text" id="source-info" required>
+        </div>
+        <div class="form-group">
+          <label for="actions">Предпринятые действия</label>
+          <input type="text" id="actions" required>
+        </div>
+        <div class="form-group">
+          <label for="recommendations">Рекомендации</label>
+          <input type="text" id="recommendations" required>
+        </div>
+        <div class="form-group">
+          <label for="target-system">Информация о целевой системе</label>
+          <input type="text" id="target-system" required>
+        </div>
+        <div class="form-group">
+          <label for="additional-info">Дополнительная информация</label>
+          <textarea id="additional-info" rows="2" required></textarea>
+        </div>
+        <button type="button" id="submit-incident">Перенести</button>
+      </form>
+    </div>
+
+    <!-- Правая панель -->
+    <div class="right-panel">
+      <h2>Превью таблицы</h2>
+      <table id="output-table">
+        <tbody>
+          <tr>
+            <td>Название инцидента</td>
+            <td id="preview-incident-name"></td>
+          </tr>
+          <tr>
+            <td>Критичность инцидента</td>
+            <td id="preview-criticality"></td>
+          </tr>
+          <tr>
+            <td>Категория инцидента</td>
+            <td id="preview-category"></td>
+          </tr>
+          <tr>
+            <td>Тип инцидента</td>
+            <td id="preview-type"></td>
+          </tr>
+          <tr>
+            <td>Дата и время инцидента</td>
+            <td id="preview-datetime"></td>
+          </tr>
+          <tr>
+            <td>Подробное описание</td>
+            <td id="preview-description"></td>
+          </tr>
+          <tr>
+            <td>Информация об источнике активности</td>
+            <td id="preview-source-info"></td>
+          </tr>
+          <tr>
+            <td>Предпринятые действия</td>
+            <td id="preview-actions"></td>
+          </tr>
+          <tr>
+            <td>Рекомендации</td>
+            <td id="preview-recommendations"></td>
+          </tr>
+          <tr>
+            <td>Информация о целевой системе</td>
+            <td id="preview-target-system"></td>
+          </tr>
+          <tr>
+            <td>Дополнительная информация</td>
+            <td id="preview-additional-info"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
